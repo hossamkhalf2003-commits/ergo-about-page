@@ -3,12 +3,12 @@
 
 
 ## 💡 Concept
-A brief 2-sentence description of what this app does. (e.g., "A habit tracking app built with Flutter that focuses on minimalist design and gesture-based navigation.")
+A landing page for my company.
 
 ## 🎨 Design & Code
 * **Design:** Created high-fidelity mockups in **Figma** before coding.
 * **Frontend:** Built using HTML5, tailwind CSS.
-* **Backend:** Built using Java Script.
+
 
 ## 🚀 Features
 * Easy to access and use site.
