@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Ergo-EG</title>
-    <link rel="icon" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cline x1='4' y1='5' x2='20' y2='5' stroke='%233A86FF' stroke-width='2.5' stroke-linecap='round'%3e%3c/line%3e%3cline x1='4' y1='12' x2='15' y2='12' stroke='%233A86FF' stroke-width='2.5' stroke-linecap='round'%3e%3c/line%3e%3cline x1='4' y1='19' x2='20' y2='19' stroke='%233A86FF' stroke-width='2.5' stroke-linecap='round'%3e%3c/line%3e%3c/svg%3e" type="image/svg+xml">
-
+    <meta name="description" content="Ergo is a leading provider of workforce outsourcing, payroll management, and skilled labor supply in Egypt. We connect industrial companies with trained, competent workers.">
+    <meta name="keywords" content="outsourcing Egypt, manpower supply, blue collar jobs, HR services, payroll management, Ergo EG, recruitment 6th of October">
+    <meta name="author" content="Ergo">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ergo - Exceptional Outsourcing Services">
+    <meta property="og:description" content="Your trusted partner in business process outsourcing and workforce solutions in Egypt.">
+    <meta property="og:url" content="https://www.ergo-eg.com/">
+    <meta property="og:image" content="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1200">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <title>Ergo-EG | Workforce Solutions</title>
+    
+    <link rel="icon" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cline x1='4' y1='5' x2='20' y2='5' stroke='%233A86FF' stroke-width='2.5' stroke-linecap='round'%3e%3c/line%3e%3cline x1='4' y1='12' x2='15' y2='12' stroke='%233A86FF' stroke-width='2.5' stroke-linecap='round'%3e%3c/line%3e%3cline x1='4' y1='19' x2='20' y2='19' stroke='%233A86FF' stroke-width='2.5' stroke-linecap='round'%3e%3c/line%3e%3c/svg%3e" type="image/svg+xml">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary-dark-blue: #0D2A4C;
@@ -18,15 +31,12 @@
             --white-color: #FFFFFF;
             --dark-text: #333333;
             --light-text: #f4f4f4;
-            --success-green: #28a745;
-            --danger-red: #dc3545;
             --card-bg: var(--light-bg);
             --body-bg: var(--light-bg);
             --section-bg: var(--white-color);
             --heading-color: var(--dark-text);
             --card-border-color: #eee;
         }
-
         body.dark-mode {
             --primary-dark-blue: #0A192F;
             --light-bg: #172A45;
@@ -39,71 +49,106 @@
             --heading-color: #ccd6f6;
             --card-border-color: #2c3e50;
         }
-
         html { scroll-behavior: smooth; }
-
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Cairo', sans-serif;
             background-color: var(--body-bg);
             color: var(--dark-text);
             line-height: 1.6;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        
         :focus { outline: 2px solid var(--primary-accent-blue); outline-offset: 2px; }
-
         .container { max-width: 1100px; margin: auto; overflow: hidden; padding: 0 2rem; }
-
-        /* --- KEYFRAMES FOR ANIMATIONS --- */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
         @keyframes kenburns {
-            0% {
-                background-size: 100% 100%;
-                background-position: center center;
-            }
-            100% {
-                background-size: 115% 115%;
-                background-position: center center;
-            }
+            0% { background-size: 100% 100%; background-position: center center; }
+            100% { background-size: 115% 115%; background-position: center center; }
         }
 
-        /* --- HEADER & NAVIGATION --- */
+        /* --- GLASSMORPHISM NAVBAR REFINEMENT --- */
         .navbar {
-            background-color: rgba(13, 42, 76, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            /* Updated for Glassmorphism */
+            background: rgba(13, 42, 76, 0.65); /* More transparent base */
+            backdrop-filter: blur(16px) saturate(180%); /* Stronger blur & saturation */
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle icy edge */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
         }
-        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        
+        /* Scrolled State: Less transparent, stronger shadow */
+        .navbar.scrolled {
+            background: rgba(13, 42, 76, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .navbar .container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2rem;
+        }
+        .navbar nav {
+            flex-grow: 1;
+        }
         .navbar .logo a { font-size: 1.8rem; font-weight: 700; color: #FFFFFF; text-decoration: none; display: flex; align-items: center; gap: 10px; }
         .navbar .logo svg { width: 30px; height: 30px; stroke: var(--primary-accent-blue); }
-        .navbar nav ul { list-style: none; display: flex; align-items: center; gap: 1.5rem; margin: 0; padding: 0; }
-        .navbar nav a { color: #f4f4f4; text-decoration: none; font-weight: 400; transition: color 0.3s ease; }
-        .navbar nav a:hover, .navbar nav a.active-link { color: var(--primary-accent-blue); font-weight: 600; }
-        .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; background: transparent; border: none; padding: 0;}
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        .navbar nav ul li:last-child {
+            margin-left: auto;
+        }
+        .navbar nav a {
+            color: #f4f4f4;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+            position: relative; /* For hover effect if desired later */
+        }
+        .navbar nav a:hover, .navbar nav a.active-link { color: var(--primary-accent-blue); font-weight: 600; text-shadow: 0 0 10px rgba(58, 134, 255, 0.4); }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            padding: 0;
+            margin-left: auto;
+        }
+        
         .menu-toggle .bar { width: 25px; height: 3px; background-color: #FFFFFF; border-radius: 5px; transition: all 0.3s ease-in-out; }
-
-        /* --- LANGUAGE & THEME SWITCHERS --- */
         .controls-container { display: flex; align-items: center; gap: 1rem; }
         .lang-switcher button { background: none; border: none; color: #f4f4f4; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; padding: 5px; opacity: 0.7; transition: opacity 0.3s ease, color 0.3s ease; }
         .lang-switcher button.active { opacity: 1; color: var(--primary-accent-blue); }
-        .theme-switcher { background: var(--light-bg); border: 1px solid var(--card-border-color); border-radius: 30px; cursor: pointer; display: flex; padding: 4px; position: relative; }
+        .theme-switcher { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 30px; cursor: pointer; display: flex; padding: 4px; position: relative; backdrop-filter: blur(5px); }
         .theme-switcher svg { width: 20px; height: 20px; transition: opacity 0.3s ease; }
         .theme-switcher .icon-sun { opacity: 1; color: #f39c12; }
         .theme-switcher .icon-moon { opacity: 0; position: absolute; color: #f1c40f; }
         body.dark-mode .theme-switcher .icon-sun { opacity: 0; }
         body.dark-mode .theme-switcher .icon-moon { opacity: 1; }
-
-        /* --- HERO SECTION --- */
+        
         .hero {
-            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(23, 42, 69, 0.8)), url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+            background: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
             background-attachment: fixed; 
             color: #FFFFFF; 
             min-height: 90vh; 
@@ -114,183 +159,90 @@
             text-align: left; 
             padding: 0 10%; 
             box-sizing: border-box;
+            position: relative; /* Needed for overlay */
+            overflow: hidden;
             animation: kenburns 20s ease-out alternate infinite;
         }
+
+        /* --- HERO OVERLAY IMPROVEMENT --- */
+        /* Adds a dark gradient so text pops over any image */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(13, 42, 76, 0.85) 0%, rgba(13, 42, 76, 0.4) 100%);
+            z-index: 0;
+        }
+        /* Ensures content sits above the overlay */
+        .hero > * { z-index: 1; position: relative; }
+
         html[dir="rtl"] .hero { align-items: flex-end; text-align: right; }
-
-        .hero h1, .hero p, .hero .btn { opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
-        .hero h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); color: #FFFFFF; margin-bottom: 1rem; font-weight: 700; }
+        .hero h1, .hero p, .hero .hero-buttons { opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
+        .hero h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); color: #FFFFFF; margin-bottom: 1rem; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
         .hero p { font-size: 1.2rem; max-width: 650px; margin-bottom: 2.5rem; font-weight: 300; animation-delay: 0.2s; }
-        .hero .btn { animation-delay: 0.4s; }
-        
-        /* --- BUTTONS --- */
-        .btn { background-image: linear-gradient(to right, #3A86FF, #0056b3); background-size: 200% auto; color: #FFFFFF; padding: 12px 24px; text-decoration: none; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; display: inline-block; transition: background-position 0.5s, transform 0.3s ease, box-shadow 0.3s ease; }
-        .btn:hover {
-            background-position: right center;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(58, 134, 255, 0.35);
+        .hero .hero-buttons { animation-delay: 0.4s; display: flex; flex-wrap: wrap; gap: 1rem; }
+        .btn { background-image: linear-gradient(to right, #3A86FF, #0056b3); background-size: 200% auto; color: #FFFFFF; padding: 12px 24px; text-decoration: none; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; display: inline-block; transition: background-position 0.5s, transform 0.3s ease, box-shadow 0.3s ease; font-family: 'Poppins', sans-serif; }
+        .btn:hover { background-position: right center; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(58, 134, 255, 0.35); }
+        .btn.btn-small { padding: 8px 16px; font-size: 0.85rem; font-weight: 500; }
+        .btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(58, 134, 255, 0.25);
         }
-        .btn.btn-small {
-            padding: 8px 16px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        /* --- GENERAL SECTION STYLING --- */
         .section { background: var(--section-bg); margin-bottom: 1.5rem; padding: 3rem 2rem; border-radius: 8px; box-shadow: 0 0 20px rgba(0,0,0,0.05); transition: opacity 0.6s ease-out, transform 0.6s ease-out, background-color 0.3s ease; opacity: 0; transform: translateY(20px); }
         .section.is-visible { opacity: 1; transform: translateY(0); }
         .section-header { text-align: center; margin-bottom: 2.5rem; }
         .section-header h2 { font-size: 2.5rem; font-weight: 700; position: relative; display: inline-block; padding-bottom: 0.5rem; color: var(--heading-color); }
         .section-header h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0; height: 4px; background: var(--primary-accent-blue); border-radius: 2px; transition: width 0.5s ease-out; }
         .section.is-visible .section-header h2::after { width: 60px; }
-
-        /* --- SERVICES SECTION --- */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .service-card { background: var(--card-bg); padding: 2rem; border-radius: 8px; border: 1px solid var(--card-border-color); display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; }
-        .service-card p { flex-grow: 1; }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-            border-color: var(--primary-accent-blue);
-        }
-        body.dark-mode .service-card:hover {
-            box-shadow: 0 8px 30px rgba(58, 134, 255, 0.15);
-        }
-        .service-card h3 { color: var(--heading-color); margin-top: 0; margin-bottom: 0.5rem; font-weight: 600; }
-        .service-card .icon { font-size: 2.5rem; color: var(--primary-accent-blue); margin-bottom: 1rem; line-height: 1; transition: transform 0.3s ease; }
-        .service-card:hover .icon { transform: scale(1.1) rotate(5deg); }
-
-        /* Stagger Animation Styles */
-        .stagger-container > * {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .is-visible .stagger-container > * {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* --- STATS SECTION --- */
-        .stats-section {
-            background-color: var(--primary-dark-blue);
-            padding: 4rem 2rem;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 2rem;
-            max-width: 1100px;
-            margin: auto;
-        }
-        .stat-item {
-            text-align: center;
-            color: #FFFFFF;
-        }
-        .stat-item svg {
-            width: 48px;
-            height: 48px;
-            stroke: var(--primary-accent-blue);
-            margin-bottom: 1rem;
-        }
-        .stat-number {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin: 0 0 0.5rem 0;
-            color: #FFFFFF;
-        }
-        .stat-item p {
-            margin: 0;
-            font-weight: 400;
-            color: var(--light-text);
-        }
-
-        /* --- JOBS SECTION --- */
-        .jobs-category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .job-category-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--card-border-color);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .job-category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        .job-category-card h3 {
-            color: var(--heading-color);
-            margin-top: 0;
-            font-size: 1.5rem;
-        }
-        .job-category-card p {
-            margin: 1rem 0;
-            flex-grow: 1;
-        }
-        
-        /* --- LEADERS SECTION --- */
-        .leaders-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .leader-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border-color);
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .leader-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        .leader-card .leader-img {
-            width: 140px;
-            height: 140px;
+        .services-grid, .jobs-display-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .service-card, .job-display-card { background: var(--card-bg); padding: 2rem; border-radius: 8px; border: 1px solid var(--card-border-color); display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; text-align: center;}
+        .service-card p, .job-display-card p { flex-grow: 1; }
+        .service-card:hover, .job-display-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12); border-color: var(--primary-accent-blue); }
+        body.dark-mode .service-card:hover, body.dark-mode .job-display-card:hover { box-shadow: 0 8px 30px rgba(58, 134, 255, 0.15); }
+        .service-card h3, .job-display-card h3 { color: var(--heading-color); margin-top: 0; margin-bottom: 0.5rem; font-weight: 600; }
+        .service-card .icon, .job-display-card .icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(58, 134, 255, 0.1);
             border-radius: 50%;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin: 0 auto 1.5rem auto;
-            background-color: #e0e0e0;
-            border: 4px solid var(--white-color);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .leader-card .leader-img svg {
-            width: 100%;
-            height: 100%;
-            color: #b0b0b0;
-        }
-        .leader-card h3 {
-            margin: 0 0 0.25rem 0;
-            color: var(--heading-color);
-            font-size: 1.25rem;
-        }
-        .leader-card .leader-title {
-            margin: 0 0 1rem 0;
             color: var(--primary-accent-blue);
-            font-weight: 600;
+            transition: all 0.3s ease-out;
         }
-        .leader-card .leader-bio {
-            margin: 0;
-            font-size: 0.9rem;
-            opacity: 0.8;
+        .service-card .icon svg, .job-display-card .icon svg {
+            width: 32px;
+            height: 32px;
         }
-
-        /* --- CLIENTS SECTION --- */
+        .service-card:hover .icon, .job-display-card:hover .icon {
+            background: var(--primary-accent-blue);
+            color: var(--white-color);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(58, 134, 255, 0.3);
+        }
+        .stagger-container > * { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .is-visible .stagger-container > * { opacity: 1; transform: translateY(0); }
+        .stats-section { background-color: var(--primary-dark-blue); padding: 4rem 2rem; margin: 2rem 0; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; max-width: 1100px; margin: auto; }
+        .stat-item { text-align: center; color: #FFFFFF; }
+        .stat-item svg { width: 48px; height: 48px; stroke: var(--primary-accent-blue); margin-bottom: 1rem; }
+        .stat-number { font-size: 2.8rem; font-weight: 700; margin: 0 0 0.5rem 0; color: #FFFFFF; }
+        .stat-item p { margin: 0; font-weight: 400; color: var(--light-text); }
+        .jobs-category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto; }
+        .job-category-card { background: var(--card-bg); padding: 2rem; border-radius: 8px; border: 1px solid var(--card-border-color); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-between; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .job-category-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .job-category-card h3 { color: var(--heading-color); margin-top: 0; font-size: 1.5rem; }
+        .job-category-card p { margin: 1rem 0; flex-grow: 1; }
+        .leaders-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .leader-card { background: var(--card-bg); border: 1px solid var(--card-border-color); border-radius: 8px; padding: 2rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .leader-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .leader-card .leader-img { width: 140px; height: 140px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem auto; background-color: #e0e0e0; border: 4px solid var(--white-color); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .leader-card .leader-img svg { width: 100%; height: 100%; color: #b0b0b0; }
+        .leader-card h3 { margin: 0 0 0.25rem 0; color: var(--heading-color); font-size: 1.25rem; }
+        .leader-card .leader-title { margin: 0 0 1rem 0; color: var(--primary-accent-blue); font-weight: 600; }
+        .leader-card .leader-bio { margin: 0; font-size: 0.9rem; opacity: 0.8; }
         .clients-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2.5rem; padding: 1rem 0; }
         .client-item { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
         .client-logo { display: flex; justify-content: center; align-items: center; width: 250px; height: 125px; padding: 1rem; border: 1px solid var(--card-border-color); border-radius: 8px; background-color: var(--section-bg); box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; box-sizing: border-box; }
@@ -299,90 +251,118 @@
         .client-logo:hover img { filter: grayscale(0%); opacity: 1; }
         body.dark-mode .client-logo img { filter: grayscale(100%) invert(90%) sepia(10%); }
         body.dark-mode .client-logo:hover img { filter: grayscale(0%) invert(0%) sepia(0%); }
-
-        /* --- CONTACT FORM --- */
-        .contact-form { max-width: 700px; margin: 0 auto; }
+        .contact-form, #jobAppForm { max-width: 700px; margin: 0 auto; }
         .form-group { margin-bottom: 1rem; }
         .form-group label { display: block; margin-bottom: 5px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid var(--card-border-color); border-radius: 5px; font-family: 'Poppins', sans-serif; transition: border-color 0.3s, box-shadow 0.3s; box-sizing: border-box; background: var(--section-bg); color: var(--dark-text);}
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary-accent-blue); box-shadow: 0 0 0 2px rgba(58, 134, 255, 0.25); }
-
-        /* --- FOOTER --- */
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px; border: 1px solid var(--card-border-color); border-radius: 5px; font-family: 'Poppins', sans-serif; transition: border-color 0.3s, box-shadow 0.3s; box-sizing: border-box; background: var(--section-bg); color: var(--dark-text);}
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--primary-accent-blue); box-shadow: 0 0 0 2px rgba(58, 134, 255, 0.25); }
         .footer { background-color: var(--primary-dark-blue); color: #f4f4f4; text-align: center; padding: 2.5rem 0 2rem; }
-        .footer-contact-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2.5rem;
-            margin-bottom: 2rem;
-        }
-        .footer-contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: #f4f4f4;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .footer-contact-item:hover {
-            color: var(--primary-accent-blue);
-        }
-        .footer-contact-item svg {
-            width: 22px;
-            height: 22px;
-            stroke: var(--primary-accent-blue);
-        }
-        
-        /* --- MODAL --- */
-        .modal { display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); }
-        .modal-content { background-color: var(--section-bg); margin: 15% auto; padding: 2rem; border-radius: 8px; width: 90%; max-width: 600px; position: relative; animation: fadeIn 0.5s; }
+        .footer-contact-container { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 2.5rem; margin-bottom: 2rem; }
+        .footer-contact-item { display: flex; align-items: center; gap: 0.75rem; color: #f4f4f4; text-decoration: none; transition: color 0.3s ease; }
+        .footer-contact-item:hover { color: var(--primary-accent-blue); }
+        .footer-contact-item svg { width: 22px; height: 22px; stroke: var(--primary-accent-blue); }
+        .modal { display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
+        .modal-content { background-color: var(--section-bg); margin: 10% auto; padding: 2rem; border-radius: 8px; width: 90%; max-width: 600px; position: relative; animation: fadeIn 0.5s; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        @keyframes fadeIn { from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);} }
         .close-btn { color: #aaa; float: right; font-size: 28px; font-weight: bold; position: absolute; top: 10px; right: 20px; cursor: pointer; background: none; border: none;}
         html[dir="rtl"] .close-btn { float: left; right: auto; left: 20px; }
-        @keyframes fadeIn { from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);} }
-        
-        #jobsModalList, #clientModalList {
-            list-style: none;
-            padding: 0;
-            margin-top: 1.5rem;
-            columns: 2;
-            -webkit-columns: 2;
-            -moz-columns: 2;
-            gap: 1rem;
-        }
-        #jobsModalList li, #clientModalList li {
-            padding: 8px;
-            background-color: var(--body-bg);
-            border-radius: 5px;
-            margin-bottom: 8px;
-            border: 1px solid var(--card-border-color);
-            break-inside: avoid;
-        }
-
-        /* --- SCROLL TO TOP BUTTON --- */
-        #scrollTopBtn { display: block; position: fixed; bottom: 20px; right: 30px; z-index: 999; border: none; color: #FFFFFF; cursor: pointer; padding: 15px; border-radius: 50%; font-size: 18px; line-height: 1; box-shadow: 0 4px 8px rgba(0,0,0,0.2); opacity: 0; transform: translateY(10px); visibility: hidden; transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; }
-        #scrollTopBtn.visible { opacity: 1; transform: translateY(0); visibility: visible; }
+        #clientModalList, #jobsModalList { list-style: none; padding: 0; margin-top: 1.5rem; columns: 2; -webkit-columns: 2; -moz-columns: 2; gap: 1rem; }
+        #clientModalList li, #jobsModalList li { padding: 8px; background-color: var(--body-bg); border-radius: 5px; margin-bottom: 8px; border: 1px solid var(--card-border-color); break-inside: avoid; }
+        #scrollTopBtn { display: none; position: fixed; bottom: 20px; right: 30px; z-index: 999; border: none; color: #FFFFFF; cursor: pointer; padding: 15px; border-radius: 50%; font-size: 18px; line-height: 1; box-shadow: 0 4px 8px rgba(0,0,0,0.2); opacity: 0; transform: translateY(10px); visibility: hidden; transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; }
+        #scrollTopBtn.visible { display: block; opacity: 1; transform: translateY(0); visibility: visible; }
         html[dir="rtl"] #scrollTopBtn { right: auto; left: 30px; }
         
-        /* --- RESPONSIVE DESIGN --- */
+        /* --- LOCATION SECTION STYLES --- */
+        .location-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        .location-details h3 {
+            font-size: 1.8rem;
+            color: var(--primary-accent-blue);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .location-details p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .contact-info-item svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--primary-accent-blue);
+            flex-shrink: 0;
+        }
+        .location-map iframe {
+            width: 100%;
+            height: 400px;
+            border: 1px solid var(--card-border-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
         @media (max-width: 768px) {
-            .hero { background-attachment: scroll; padding: 0 5%; animation: none; /* Disable Ken Burns on mobile */ }
+            /* --- NAVBAR MOBILE FIXES --- */
+            .navbar .container {
+                justify-content: space-between; /* Reverts to space-between on mobile */
+            }
+            .navbar nav ul li:last-child {
+                margin-left: 0; /* Resets the margin for the mobile dropdown */
+            }
+            .menu-toggle {
+                margin-left: 0; /* Resets the margin for the mobile dropdown */
+            }
+            /* --- END NAVBAR MOBILE FIXES --- */
+
+            .hero { background-attachment: scroll; padding: 0 5%; animation: none; }
             .hero h1 { font-size: clamp(2.2rem, 8vw, 2.8rem); }
-            .navbar nav { position: absolute; top: 65px; left: 0; width: 100%; background-color: var(--primary-dark-blue); flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; }
-            .navbar nav.active { max-height: 400px; }
-            .navbar nav ul { flex-direction: column; align-items: center; padding: 1rem 0; }
+            /* Mobile Nav Dropdown with Glassmorphism */
+            .navbar nav { 
+                position: absolute; 
+                top: 100%; 
+                left: 0; 
+                width: 100%; 
+                background: rgba(13, 42, 76, 0.95); /* High contrast for readability */
+                backdrop-filter: blur(15px);
+                flex-direction: column; 
+                max-height: 0; 
+                overflow: hidden; 
+                transition: max-height 0.5s ease-in-out; 
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+            .navbar nav.active { max-height: 500px; }
+            .navbar nav ul { flex-direction: column; align-items: center; padding: 1rem 0; width: 100%; }
             .menu-toggle { display: flex; }
             .menu-toggle.active .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
             .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
             .menu-toggle.active .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+            
+            /* --- LOCATION MOBILE STYLES --- */
+            .location-container {
+                grid-template-columns: 1fr; /* Stack them vertically on mobile */
+            }
+            .location-map {
+                margin-top: 1.5rem; 
+            }
+            .location-map iframe {
+                height: 300px; /* Make map a bit shorter on mobile */
+            }
         }
-
         @media (max-width: 600px) {
-           #jobsModalList, #clientModalList {
-                columns: 1;
-                -webkit-columns: 1;
-                -moz-columns: 1;
-           }
+           #clientModalList, #jobsModalList { columns: 1; -webkit-columns: 1; -moz-columns: 1; }
+           .modal-content { margin: 15% auto; }
         }
     </style>
 </head>
@@ -400,9 +380,11 @@
                 <ul>
                     <li><a href="#about" class="nav-link" data-key="navAbout">About</a></li>
                     <li><a href="#services" class="nav-link" data-key="navServices">Services</a></li>
-                    <li><a href="#jobs" class="nav-link" data-key="navJobs">Jobs</a></li>
+                    <li><a href="#available-jobs" class="nav-link" data-key="navAvailableJobs">Available Positions</a></li>
+                    <li><a href="#jobs" class="nav-link" data-key="navJobs">Our Job Categories</a></li>
                     <li><a href="#leaders" class="nav-link" data-key="navLeaders">Our Leaders</a></li>
                     <li><a href="#clients" class="nav-link" data-key="navClients">Clients</a></li>
+                    <li><a href="#location" class="nav-link" data-key="navLocation">Location</a></li>
                     <li><a href="#contact" class="nav-link" data-key="navContact">Contact</a></li>
                     <li>
                         <div class="controls-container">
@@ -427,93 +409,42 @@
     <section class="hero">
         <h1 data-key="heroTitle">Exceptional Outsourcing Services</h1>
         <p data-key="heroSubtitle">Your trusted partner in business process outsourcing, delivering excellence and efficiency.</p>
-        <a href="#services" class="btn" data-key="heroBtn">Learn More</a>
+        <div class="hero-buttons">
+            <a href="#services" class="btn" data-key="heroBtn">Learn More</a>
+            <button id="jobAppBtn" class="btn" data-key="heroBtnApp">Job Application</button>
+        </div>
     </section>
 
     <main class="main-content container">
         <section id="about" class="section">
             <div class="section-header"><h2 data-key="aboutTitle">About Us</h2></div>
-            <p style="text-align: center;" data-key="aboutText">We are passionate about delivering our services to the highest possible standards. Our team consists of highly qualified personnel dedicated to serving local and multinational clients across the country in a variety of fields.</p>
+            <p style="text-align: center;" data-key="aboutText">We are passionate about delivering our services to the highest possible standards...</p>
         </section>
 
         <section id="services" class="section">
             <div class="section-header"><h2 data-key="servicesTitle">Our Services</h2></div>
-            <div class="services-grid stagger-container">
-                <div class="service-card">
-                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
-                    <h3 data-key="service1Title">Social Insurance</h3>
-                    <p data-key="service1Text">Expert handling of all social insurance requirements and compliance.</p>
-                    <a class="btn read-more-btn" data-modal-key="service1" data-key="detailsBtn">Details</a>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
-                    <h3 data-key="service2Title">Medical Insurance</h3>
-                    <p data-key="service2Text">Comprehensive management of employee medical insurance plans and benefits.</p>
-                    <a class="btn read-more-btn" data-modal-key="service2" data-key="detailsBtn">Details</a>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
-                    <h3 data-key="service3Title">Payroll</h3>
-                    <p data-key="service3Text">Accurate, compliant, and timely payroll processing for your entire workforce.</p>
-                    <a class="btn read-more-btn" data-modal-key="service3" data-key="detailsBtn">Details</a>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
-                    <h3 data-key="service4Title">Work Permits</h3>
-                    <p data-key="service4Text">Streamlined processing of work permits and visas for expatriate employees.</p>
-                    <a class="btn read-more-btn" data-modal-key="service4" data-key="detailsBtn">Details</a>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-                    <h3 data-key="service5Title">Personnel Issues</h3>
-                    <p data-key="service5Text">Professional handling of all day-to-day personnel and HR-related matters.</p>
-                    <a class="btn read-more-btn" data-modal-key="service5" data-key="detailsBtn">Details</a>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg></div>
-                    <h3 data-key="service6Title">Our Management System</h3>
-                    <p data-key="service6Text">A powerful, centralized platform to manage all your workforce data with ease.</p>
-                    <a class="btn read-more-btn" data-modal-key="service6" data-key="detailsBtn">Details</a>
-                </div>
-            </div>
-        </section>
-        
-        <section id="stats" class="section stats-section is-visible">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                    <h2 class="stat-number" data-target="14" data-text="14+">0</h2>
-                    <p data-key="stat1Desc">Years of Experience</p>
-                </div>
-                <div class="stat-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    <h2 class="stat-number" data-target="3000" data-text="+3000">0</h2>
-                    <p data-key="stat2Desc">Skilled Workers Managed</p>
-                </div>
-                <div class="stat-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                    <h2 class="stat-number" data-target="3" data-text="3">0</h2>
-                    <p data-key="stat3Desc">Housing Buildings</p>
-                </div>
-                <div class="stat-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-                    <h2 class="stat-number" data-target="15" data-text="15">0</h2>
-                    <p data-key="stat4Desc">Trucks</p>
-                </div>
-               
-            </div>
+            <div id="services-grid" class="services-grid stagger-container"></div>
         </section>
 
+        <section id="available-jobs" class="section">
+            <div class="section-header"><h2 data-key="availableJobsTitle">Available Positions</h2></div>
+            <div id="jobs-display-grid" class="jobs-display-grid stagger-container"></div>
+        </section>
+        
+        <section id="stats" class="section stats-section">
+            <div class="stats-grid" id="stats-grid-content"></div>
+        </section>
+        
         <section id="jobs" class="section">
-            <div class="section-header"><h2 data-key="jobsTitle">Our Jobs</h2></div>
+            <div class="section-header"><h2 data-key="jobsTitle">Our Job Categories</h2></div>
             <div class="jobs-category-grid">
                 <div class="job-category-card">
-                    <h3 data-key="blueSarkTitle">Blue Sark</h3>
+                    <h3 data-key="blueSarkTitle">Blue Collar</h3>
                     <p data-key="blueSarkDesc">Explore our available blue-collar job opportunities.</p>
                     <button class="btn job-details-btn" data-job-category="blue" data-key="detailsBtnJobs">See Details</button>
                 </div>
                 <div class="job-category-card">
-                    <h3 data-key="whiteSarkTitle">White Sark</h3>
+                    <h3 data-key="whiteSarkTitle">White Collar</h3>
                     <p data-key="whiteSarkDesc">Discover our open white-collar and technical positions.</p>
                     <button class="btn job-details-btn" data-job-category="white" data-key="detailsBtnJobs">See Details</button>
                 </div>
@@ -522,546 +453,515 @@
 
         <section id="leaders" class="section">
             <div class="section-header"><h2 data-key="leadersTitle">Meet Our Leaders</h2></div>
-            <div class="leaders-grid stagger-container">
-                <div class="leader-card">
-                    <div class="leader-img">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    </div>
-                    <h3 data-key="leader1Name">Salem Mohamed</h3>
-                    <p class="leader-title" data-key="leader1Role">Chief Executive Officer</p>
-                    <p class="leader-bio" data-key="leader1Bio">With over two decades of experience in the industrial sector, Salem provides the strategic vision that drives Ergo's growth and commitment to excellence.</p>
-                </div>
-                <div class="leader-card">
-                    <div class="leader-img">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    </div>
-                    <h3 data-key="leader2Name">Tarek Ghaffar</h3>
-                    <p class="leader-title" data-key="leader2Role">Founder & Chairman</p>
-                    <p class="leader-bio" data-key="leader2Bio">Tarek founded Ergo with a vision to revolutionize workforce solutions in Egypt. His leadership continues to inspire our mission and values.</p>
-                </div>
-                <div class="leader-card">
-                    <div class="leader-img">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12"cy="7" r="4"></circle></svg>
-                    </div>
-                    <h3 data-key="leader3Name">Yahia Abdelrahman</h3>
-                    <p class="leader-title" data-key="leader3Role">Human Resources Manager</p>
-                    <p class="leader-bio" data-key="leader3Bio">Yahia is dedicated to cultivating a skilled and motivated workforce, ensuring both our employees and our clients achieve their full potential.</p>
-                </div>
-            </div>
+            <div id="leaders-grid" class="leaders-grid stagger-container"></div>
         </section>
 
         <section id="clients" class="section">
             <div class="section-header"><h2 data-key="clientsTitle">Our Major Clients</h2></div>
-            <div class="clients-grid">
-                <div class="client-item">
-                    <div class="client-logo"><img src="logos/pepsi-logo.png" alt="Pepsi Logo"></div>
-                    <button class="btn btn-small client-details-btn" data-client="pepsi" data-key="factoriesBtn">Factories & branches</button>
-                </div>
-                 <div class="client-item">
-                    <div class="client-logo"><img src="logos/chipsy-logo.png" alt="Chipsy Logo"></div>
-                    <button class="btn btn-small client-details-btn" data-client="chipsy" data-key="factoriesBtn">Factories & branches</button>
-                </div>
-                 <div class="client-item">
-                    <div class="client-logo"><img src="logos/coca-cola-logo.jpg" alt="Coca-Cola Logo"></div>
-                    <button class="btn btn-small client-details-btn" data-client="cocacola" data-key="factoriesBtn">Factories & branches</button>
-                </div>
-                 <div class="client-item">
-                    <div class="client-logo"><img src="logos/heinz-logo.jpg" alt="Heinz Logo"></div>
-                    <button class="btn btn-small client-details-btn" data-client="heinz" data-key="factoriesBtn">Factories & branches</button>
-                </div>
-                 <div class="client-item">
-                    <div class="client-logo"><img src="logos/kelloggs-logo.jpg" alt="Kellogg's Logo"></div>
-                    <button class="btn btn-small client-details-btn" data-client="kelloggs" data-key="factoriesBtn">Factories & branches</button>
-                </div>
-                <div class="client-item">
-                    <div class="client-logo"><img src="logos/iffco-logo.jpg" alt="IFFCO Logo"></div>
-                    <button class="btn btn-small client-details-btn" data-client="iffco" data-key="factoriesBtn">Factories & branches</button>
-                </div>
-                <div class="client-item">
-                    <div class="client-logo"><img src="logos/Beyti-logo.avif" alt="Beyti Logo"></div>
-                    <button class="btn btn-small client-details-btn" data-client="beyti" data-key="factoriesBtn">Factories & branches</button>
-                </div>
-            </div>
+            <div id="clients-grid" class="clients-grid"></div>
             <p style="text-align: center; margin-top: 2.5rem; font-size: 1.1rem;" data-key="clientsTotal"></p>
         </section>
+
+        <section id="location" class="section">
+            <div class="section-header"><h2 data-key="locationTitle">Our Location</h2></div>
+            <div class="location-container">
+                
+                <div class="location-details">
+                    <h3 data-key="locationSubtitle">Visit Our Office</h3>
+                    <p data-key="locationAddress">
+                        123 Industrial Zone, 6th of October City, Giza, Egypt
+                    </p>
+                
+                </div>
+                
+                <div class="location-map">
+                 <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3456.7501674105483!2d30.917990000000003!3d29.957863999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDU3JzI4LjMiTiAzMMKwNTUnMDQuOCJF!5e0!3m2!1sar!2seg!4v1761134302734!5m2!1sar!2seg"  width="600" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                </div>
+                
+            </div>
+        </section>
+
         <section id="contact" class="section">
             <div class="section-header"><h2 data-key="contactTitle">Contact Us</h2></div>
-            <form id="contactForm" class="contact-form" action="https://formspree.io/f/xkgqbnyp" method="POST">
+            <form id="contactForm" class="contact-form" method="POST">
+                <input type="hidden" name="formName" value="contact">
                 <div class="form-group"><label for="company" data-key="formCompany">Company</label><input type="text" id="company" name="company"></div>
                 <div class="form-group"><label for="name" data-key="formName">Name</label><input type="text" id="name" name="name" required></div>
                 <div class="form-group"><label for="phone" data-key="formPhone">Phone Number</label><input type="tel" id="phone" name="phone"></div>
                 <div class="form-group"><label for="position" data-key="formPosition">Position</label><input type="text" id="position" name="position"></div>
                 <div class="form-group"><label for="email" data-key="formEmail">Email</label><input type="email" id="email" name="email" required></div>
-                <div class="form-group"><label for="message" data-key="formMessage">Message</label><textarea id="message" name="message" required></textarea></div>
-                <div style="text-align: center;"><button type="submit" class="btn" id="submitBtn" data-key="formBtn">Send Message</button></div>
+                <div class="form-group"><label for="message" data-key="formMessage">Message</label><textarea id="message" name="message" rows="4" required></textarea></div>
+                <div style="text-align: center;"><button type="submit" class="btn" data-key="formBtn">Send Message</button></div>
             </form>
+             <div id="contactFormStatus"></div>
         </section>
     </main>
 
     <footer class="footer">
         <div class="footer-contact-container">
-            <a href="mailto:Yahia.Abdelrahman@ergoeg.com" class="footer-contact-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+             <a href="mailto:Yahia.Abdelrahman@ergoeg.com" class="footer-contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 Yahia.Abdelrahman@ergoeg.com
             </a>
-            <a href="tel:+20 115 888 2425" class="footer-contact-item" dir="ltr">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="https://wa.me/201158882425" class="footer-contact-item" dir="ltr" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                 +20 115 888 2425
             </a>
         </div>
-        <p data-key="footerText">&copy; 2025 Ergo. All Rights Reserved.</p>
+        <p data-key="footerText">© 2025 Ergo. All Rights Reserved.</p>
     </footer>
 
-    <div id="serviceModal" class="modal"><div class="modal-content"><button class="close-btn" tabindex="0" aria-label="Close modal">&times;</button><h2 id="modalTitle"></h2><p id="modalContent"></p></div></div>
-    
-    <div id="jobsModal" class="modal"><div class="modal-content"><button class="close-btn" tabindex="0" aria-label="Close modal">&times;</button><h2 id="jobsModalTitle"></h2><ul id="jobsModalList"></ul></div></div>
-
-    <div id="clientModal" class="modal"><div class="modal-content"><button class="close-btn" tabindex="0" aria-label="Close modal">&times;</button><h2 id="clientModalTitle"></h2><ul id="clientModalList"></ul></div></div>
+    <div id="serviceModal" class="modal"><div class="modal-content"><button class="close-btn">×</button><h2 id="modalTitle"></h2><p id="modalContent"></p></div></div>
+    <div id="clientModal" class="modal"><div class="modal-content"><button class="close-btn">×</button><h2 id="clientModalTitle"></h2><ul id="clientModalList"></ul></div></div>
+    <div id="jobsModal" class="modal"><div class="modal-content"><button class="close-btn">×</button><h2 id="jobsModalTitle"></h2><ul id="jobsModalList"></ul></div></div>
+    <div id="jobAppModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn">×</button>
+            <h2 data-key="jobAppModalTitle">Job Application</h2>
+            <form id="jobAppForm" class="contact-form" method="POST">
+                <input type="hidden" name="formName" value="jobApplication">
+                 <div class="form-group"><label data-key="formName">Name</label><input type="text" name="name" required></div>
+                 <div class="form-group"><label data-key="formAge">Age</label><input type="number" name="age" required></div>
+                 <div class="form-group"><label data-key="formMaritalStatus">Marital Status</label><input type="text" name="marital_status" required></div>
+                 <div class="form-group">
+                    <label data-key="formJob">Job</label>
+                    <select name="job" required>
+                        <option value="labor" data-key="jobOptLabor">Labor</option>
+                        <option value="driver" data-key="jobOptDriver">Driver</option>
+                        <option value="helper" data-key="jobOptHelper">Helper</option>
+                        <option value="technician" data-key="jobOptTechnician">Technician</option>
+                        <option value="data_entry" data-key="jobOptDataEntry">Data Entry</option>
+                        <option value="supervisor" data-key="jobOptSupervisor">Supervisor</option>
+                        <option value="merchandiser" data-key="jobOptMerchandiser">Merchandiser</option>
+                        <option value="store_keeper" data-key="jobOptStoreKeeper">Store Keeper</option>
+                        <option value="coordinator" data-key="jobOptCoordinator">Coordinator</option>
+                        <option value="operator" data-key="jobOptOperator">Operator</option>
+                    </select>
+                 </div>
+                 <div class="form-group"><label data-key="formAddress">Address</label><input type="text" name="address" required></div>
+                 <div class="form-group"><label data-key="formPhone">Phone Number</label><input type="tel" name="phone" required></div>
+                 <div style="text-align: center;"><button type="submit" class="btn" data-key="formBtnApply">Apply Now</button></div>
+            </form>
+             <div id="jobAppFormStatus"></div>
+        </div>
+    </div>
 
     <button id="scrollTopBtn" title="Go to top" class="btn">▲</button>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // --- DATA FOR i18n & JOBS ---
-            const translations = {
-                en: {
-                    logoText: "Ergo",
-                    navAbout: "About",
-                    navServices: "Services",
-                    navJobs: "Jobs",
-                    navLeaders: "Our Leaders",
-                    navClients: "Clients",
-                    navContact: "Contact",
-                    heroTitle: "Ergo's Vision",
-                    heroSubtitle: "To be a pioneer and role model in providing trained, educated and competent workers to prestigious industrial companies operating in Egypt and the Middle East.",
-                    heroBtn: "Learn More",
-                    aboutTitle: "About Us",
-                    aboutText: "A Strategic Partner for a Specialized Workforce to Achieve Industrial Excellence Ergo is a leading supplier of trained and skilled contract labor to Egypt's leading industrial sector, with a proven track record built on partnership, reliability, and exceptional performance. For over a decade, our most prominent partnership has been with Chipsy Food Industries and PepsiCo, a relationship that embodies our core operating philosophy.",
-                    servicesTitle: "Our Services",
-                    service1Title: "Social Insurance",
-                    service1Text: "Expert handling of all social insurance requirements and compliance.",
-                    service2Title: "Medical Insurance",
-                    service2Text: "Comprehensive management of employee medical insurance plans and benefits.",
-                    service3Title: "Payroll",
-                    service3Text: "Accurate, compliant, and timely payroll processing for your entire workforce.",
-                    service4Title: "Work Permits",
-                    service4Text: "Streamlined processing of work permits and visas for expatriate employees.",
-                    service5Title: "Personnel Issues",
-                    service5Text: "Professional handling of all day-to-day personnel and HR-related matters.",
-                    service6Title: "Our Management System",
-                    service6Text: "A powerful, centralized platform to manage all your workforce data with ease.",
-                    detailsBtn: "Details",
-                    stat1Desc: "Years of Experience",
-                    stat2Desc: "Skilled Workers Managed",
-                    stat3Desc: "Housing Buildings",
-                    stat4Desc: "Trucks",
-                    stat5Desc: "Buses",
-                    jobsTitle: "Our Jobs",
-                    blueSarkTitle: "Blue Sark",
-                    blueSarkDesc: "Explore our available blue-collar job opportunities.",
-                    whiteSarkTitle: "White Sark",
-                    whiteSarkDesc: "Discover our open white-collar and technical positions.",
-                    detailsBtnJobs: "See Details",
-                    leadersTitle: "Meet Our Leaders",
-                    leader1Name: "Salem Mohamed",
-                    leader1Role: "Chief Executive Officer",
-                    leader1Bio: "With over one decade of experience in the industrial sector, Salem provides the strategic vision that drives Ergo's growth and commitment to excellence.",
-                    leader2Name: "Tarek Ghaffar",
-                    leader2Role: "Founder & Chairman",
-                    leader2Bio: "Tarek founded Ergo with a vision to revolutionize workforce solutions in Egypt. His leadership continues to inspire our mission and values.",
-                    leader3Name: "Yahia Abdelrahman",
-                    leader3Role: "Human Resources Manager",
-                    leader3Bio: "Yahia is dedicated to cultivating a skilled and motivated workforce, ensuring both our employees and our clients achieve their full potential.",
-                    clientsTitle: "Our Major Clients",
-                    factoriesBtn: "Factories & branches",
-                    clientsTotal: "In total, we proudly serve our partners across 22 factories and branches throughout Egypt.",
-                    contactTitle: "Contact Us",
-                    formCompany: "Company",
-                    formName: "Name",
-                    formPhone: "Phone Number",
-                    formPosition: "Position",
-                    formEmail: "Email",
-                    formMessage: "Message",
-                    formBtn: "Send Message",
-                    footerText: "© 2025 Ergo. All Rights Reserved.",
-                    // Modal Content
-                    service1ModalTitle: "Social Insurance",
-                    service1ModalContent: "Ensure complete compliance and peace of mind with our expert social insurance management. We handle the entire lifecycle, from seamless employee registration to accurate monthly contribution processing and meticulous record-keeping. Our proactive approach keeps you ahead of regulatory changes, protecting your business from penalties and ensuring your employees' statutory rights are fully secured.",
-                    service2ModalTitle: "Medical Insurance",
-                    service2ModalContent: "Attract and retain top talent by offering exceptional medical benefits without the administrative burden. We act as your strategic partner, sourcing and managing customized insurance plans that fit your budget and your team's needs. From enrollment and claims processing to direct employee support, we deliver a seamless experience that demonstrates your commitment to your team's well-being.",
-                    service3ModalTitle: "Payroll",
-                    service3ModalContent: "Transform your payroll from a complex task into a strategic advantage. Our service guarantees flawless accuracy and strict compliance with all local labor laws and tax regulations. By outsourcing to Ergo, you eliminate risks, reduce overhead, and free up your team to focus on growth, all while ensuring your employees are paid on time, every time.",
-                    service4ModalTitle: "Work Permits",
-                    service4ModalContent: "Expand your team with global talent, effortlessly. Our specialized service demystifies the complex process of securing work permits and visas for your expatriate employees. We manage every step, from document preparation and submission to liaising with government authorities, ensuring a swift and successful outcome. Let us handle the bureaucracy so you can focus on welcoming your new team member.",
-                    service5ModalTitle: "Personnel Issues",
-                    service5ModalContent: "Navigate the complexities of human resources with confidence. Our team provides expert guidance and hands-on support for all personnel matters, including contract management, performance evaluations, disciplinary procedures, and compliance with labor laws. We help you build a positive, productive, and legally sound work environment, minimizing risk and maximizing employee potential.",
-                    service6ModalTitle: "Our Management System",
-                    service6ModalContent: "Unlock unparalleled efficiency with the Ergo Workforce Platform, our state-of-the-art management system. This powerful tool centralizes all your critical HR functions—from attendance and leave tracking to detailed employee records and payroll data—into one intuitive dashboard. Gain real-time insights, generate powerful reports, and make data-driven decisions to optimize your operations and manage your workforce across any number of sites."
-                },
-                ar: {
-                    logoText: "إرجو",
-                    navAbout: "نبذة عنا",
-                    navServices: "خدماتنا",
-                    navJobs: "الوظائف",
-                    navLeaders: "قيادتنا",
-                    navClients: "عملاؤنا",
-                    navContact: "اتصل بنا",
-                    heroTitle: "رؤية إرجو",
-                    heroSubtitle: "أن نكون روادًا ونموذجًا يُحتذى به في توفير العمالة المدربة والمتعلمة والكفؤة للشركات الصناعية المرموقة العاملة في مصر والشرق الأوسط.",
-                    heroBtn: "اعرف المزيد",
-                    aboutTitle: "نبذة عنا",
-                    aboutText: "شريك استراتيجي لقوة عاملة متخصصة لتحقيق التميز الصناعي إرجو هي شركة رائدة في توفير العمالة المتعاقدة المدربة والماهرة للقطاع الصناعي الرائد في مصر، مع سجل حافل مبني على الشراكة والموثوقية والأداء الاستثنائي. لأكثر من عقد من الزمان، كانت شراكتنا الأبرز مع شركة شيبسي للصناعات الغذائية وبيبسيكو، وهي علاقة تجسد فلسفتنا التشغيلية الأساسية.",
-                    servicesTitle: "خدماتنا",
-                    service1Title: "التأمينات الاجتماعية",
-                    service1Text: "معالجة احترافية لجميع متطلبات التأمينات الاجتماعية والامتثال للقوانين.",
-                    service2Title: "التأمين الطبي",
-                    service2Text: "إدارة شاملة لخطط ومزايا التأمين الطبي للموظفين.",
-                    service3Title: "الرواتب",
-                    service3Text: "معالجة دقيقة ومتوافقة وفي الوقت المناسب لرواتب القوى العاملة لديك.",
-                    service4Title: "تصاريح العمل",
-                    service4Text: "إجراءات مبسطة لاستخراج تصاريح العمل والتأشيرات للموظفين الأجانب.",
-                    service5Title: "شؤون الموظفين",
-                    service5Text: "معالجة احترافية لجميع الأمور اليومية المتعلقة بالموظفين والموارد البشرية.",
-                    service6Title: "نظامنا الإداري",
-                    service6Text: "منصة مركزية قوية لإدارة جميع بيانات القوى العاملة لديك بكل سهولة.",
-                    detailsBtn: "تفاصيل",
-                    stat1Desc: "سنوات من الخبرة",
-                    stat2Desc: "عامل ماهر مُدار",
-                    stat3Desc: "مباني سكنية",
-                    stat4Desc: "شاحنة",
-                    stat5Desc: "حافلة",
-                    jobsTitle: "وظائفنا",
-                    blueSarkTitle: "بلو سارك",
-                    blueSarkDesc: "اكتشف فرص العمل المتاحة لدينا للعمالة.",
-                    whiteSarkTitle: "وايت سارك",
-                    whiteSarkDesc: "اكتشف وظائفنا الإدارية والفنية الشاغرة.",
-                    detailsBtnJobs: "عرض التفاصيل",
-                    leadersTitle: "تعرف على قادتنا",
-                    leader1Name: "سالم محمد",
-                    leader1Role: "الرئيس التنفيذي",
-                    leader1Bio: "بخبرة تمتد لأكثر من عقد في القطاع الصناعي، يقدم سالم الرؤية الاستراتيجية التي تدفع نمو إرجو والتزامها بالتميز.",
-                    leader2Name: "طارق غفار",
-                    leader2Role: "المؤسس ورئيس مجلس الإدارة",
-                    leader2Bio: "أسس طارق شركة إرجو برؤية لإحداث ثورة في حلول القوى العاملة في مصر. وتستمر قيادته في إلهام رسالتنا وقيمنا.",
-                    leader3Name: "يحيى عبد الرحمن",
-                    leader3Role: "مدير الموارد البشرية",
-                    leader3Bio: "يكرس يحيى جهوده لتنمية قوة عاملة ماهرة ومتحفزة، مما يضمن تحقيق موظفينا وعملائنا لأقصى إمكاناتهم.",
-                    clientsTitle: "كبار عملائنا",
-                    factoriesBtn: "المصانع والفروع",
-                    clientsTotal: "في الإجمالي، نفخر بخدمة شركائنا عبر ٢٢ مصنعًا وفرعًا في جميع أنحاء مصر.",
-                    contactTitle: "اتصل بنا",
-                    formCompany: "الشركة",
-                    formName: "الاسم",
-                    formPhone: "رقم الهاتف",
-                    formPosition: "المنصب الوظيفي",
-                    formEmail: "البريد الإلكتروني",
-                    formMessage: "الرسالة",
-                    formBtn: "إرسال الرسالة",
-                    footerText: "© 2025 إرجو. جميع الحقوق محفوظة.",
-                    // Modal Content
-                    service1ModalTitle: "التأمينات الاجتماعية",
-                    service1ModalContent: "نضمن لك الامتثال الكامل وراحة البال من خلال إدارتنا المتخصصة للتأمينات الاجتماعية. نحن نتولى الدورة الكاملة، بدءًا من تسجيل الموظفين بسلاسة وصولًا إلى معالجة الاشتراكات الشهرية بدقة وحفظ السجلات بعناية. نهجنا الاستباقي يبقيك متقدمًا على التغييرات التنظيمية، مما يحمي عملك من العقوبات ويضمن تأمين الحقوق القانونية لموظفيك بالكامل.",
-                    service2ModalTitle: "التأمين الطبي",
-                    service2ModalContent: "اجذب أفضل المواهب وحافظ عليها من خلال تقديم مزايا طبية استثنائية دون عبء إداري. نحن نعمل كشريك استراتيجي لك، حيث نقوم بتوفير وإدارة خطط تأمين مخصصة تناسب ميزانيتك واحتياجات فريقك. من التسجيل ومعالجة المطالبات إلى الدعم المباشر للموظفين، نقدم تجربة سلسة تظهر التزامك برفاهية فريقك.",
-                    service3ModalTitle: "الرواتب",
-                    service3ModalContent: "حوّل كشوف المرتبات الخاصة بك من مهمة معقدة إلى ميزة استراتيجية. تضمن خدمتنا دقة لا تشوبها شائبة وامتثالًا صارمًا لجميع قوانين العمل واللوائح الضريبية المحلية. من خلال الاستعانة بمصادر خارجية لشركة إرجو، فإنك تقضي على المخاطر وتقلل النفقات العامة وتحرر فريقك للتركيز على النمو، كل ذلك مع ضمان دفع رواتب موظفيك في الوقت المحدد، في كل مرة.",
-                    service4ModalTitle: "تصاريح العمل",
-                    service4ModalContent: "وسّع فريقك بمواهب عالمية، دون عناء. تعمل خدمتنا المتخصصة على إزالة الغموض عن العملية المعقدة لتأمين تصاريح العمل والتأشيرات لموظفيك الأجانب. نحن ندير كل خطوة، من إعداد المستندات وتقديمها إلى التواصل مع السلطات الحكومية، مما يضمن نتيجة سريعة وناجحة. دعنا نتعامل مع البيروقراطية حتى تتمكن من التركيز على الترحيب بعضو فريقك الجديد.",
-                    service5ModalTitle: "شؤون الموظفين",
-                    service5ModalContent: "تعامل مع تعقيدات الموارد البشرية بثقة. يقدم فريقنا إرشادات الخبراء والدعم العملي لجميع شؤون الموظفين، بما في ذلك إدارة العقود وتقييمات الأداء والإجراءات التأديبية والامتثال لقوانين العمل. نحن نساعدك على بناء بيئة عمل إيجابية ومنتجة وسليمة من الناحية القانونية، مما يقلل من المخاطر ويزيد من إمكانات الموظفين.",
-                    service6ModalTitle: "نظامنا الإداري",
-                    service6ModalContent: "أطلق العنان لكفاءة لا مثيل لها مع منصة إرجو للقوى العاملة، نظامنا الإداري الحديث. هذه الأداة القوية تضع جميع وظائف الموارد البشرية الحيوية - من تتبع الحضور والإجازات إلى سجلات الموظفين التفصيلية وبيانات الرواتب - في لوحة تحكم واحدة سهلة الاستخدام. احصل على رؤى في الوقت الفعلي، وأنشئ تقارير قوية، واتخذ قرارات تعتمد على البيانات لتحسين عملياتك وإدارة القوى العاملة لديك عبر أي عدد من المواقع."
-                }
-            };
-            
-            const jobListings = {
-                blue: {
-                    en: {
-                        title: "Blue Sark Jobs",
-                        jobs: ["Production Labor", "Forklift Driver", "Wholesale Helper", "Non Production Labor", "Labor", "Helper", "Retail Helper"]
-                    },
-                    ar: {
-                        title: "وظائف العمالة (بلو سارك)",
-                        jobs: ["عامل إنتاج", "سائق رافعة شوكية", "مساعد بيع بالجملة", "عامل خدمات (غير إنتاجي)", "عامل", "مساعد", "مساعد بيع بالتجزئة"]
-                    }
-                },
-                white: {
-                    en: {
-                        title: "White Sark Jobs",
-                        jobs: ["Supervisor", "Merchandiser", "Assistant Store Keeper", "Store Keeper", "Operator", "Loading Labor", "Service Labor", "Yard Coordinator", "LD&T Coordinator", "Facilities Coordinator", "Tractor Driver", "Agro Operator", "Warehouse Officer", "SC QC Technician", "Lab Technician", "Lab Analyst", "Facilities Driver", "Deployment Driver", "Assistant Technician", "Argo Lab Technician", "Loading Driver", "Ambulance Driver", "Data Entry Clerk"]
-                    },
-                    ar: {
-                        title: "وظائف الإدارة والفنيين (وايت سارك)",
-                        jobs: ["مشرف", "منسق مبيعات", "مساعد أمين مخزن", "أمين مخزن", "مشغل", "عامل تحميل", "عامل خدمات", "منسق ساحة", "منسق تحميل ونقل", "منسق مرافق", "سائق جرار", "مشغل زراعي", "مسؤول مستودع", "فني جودة سلسلة التوريد", "فني مختبر", "محلل مختبر", "سائق مرافق", "سائق توزيع", "مساعد فني", "فني معمل زراعي", "سائق تحميل", "سائق إسعاف", "مدخل بيانات"]
-                    }
-                }
-            };
-
-            const clientLocations = {
-                pepsi: {
-                    en: {
-                        title: "Pepsi Factories & Branches",
-                        locations: ["Zagazig", "Tanta", "Nasr City", "Ain Shams", "Maadi", "Mostorod", "October", "Amreya", "Embaba"]
-                    },
-                    ar: {
-                        title: "مصانع وفروع بيبسي",
-                        locations: ["الزقازيق", "طنطا", "مدينة نصر", "عين شمس", "المعادي", "مسطرد", "أكتوبر", "العامرية", "إمبابة"]
-                    }
-                },
-                chipsy: {
-                    en: {
-                        title: "Chipsy Factories & Branches",
-                        locations: ["Ain Shams", "October", "Katameya", "Tanash", "Obour"]
-                    },
-                    ar: {
-                        title: "مصانع وفروع شيبسي",
-                        locations: ["عين شمس", "أكتوبر", "القطامية", "طناش", "العبور"]
-                    }
-                },
-                cocacola: {
-                    en: {
-                        title: "Coca-Cola Factories & Branches",
-                        locations: ["October"]
-                    },
-                    ar: {
-                        title: "مصانع وفروع كوكاكولا",
-                        locations: ["أكتوبر"]
-                    }
-                },
-                heinz: {
-                    en: {
-                        title: "Heinz Factories & Branches",
-                        locations: ["October"]
-                    },
-                    ar: {
-                        title: "مصانع وفروع هاينز",
-                        locations: ["اكتوبر"]
-                    }
-                },
-                kelloggs: {
-                    en: {
-                        title: "Kellogg's Factories & Branches",
-                        locations: ["October", "Sahel"]
-                    },
-                    ar: {
-                        title: "مصانع وفروع كيلوجز",
-                        locations: ["أكتوبر", "الساحل"]
-                    }
-                },
-                iffco: {
-                    en: {
-                        title: "IFFCO Factories & Branches",
-                        locations: ["Suez"]
-                    },
-                    ar: {
-                        title: "مصانع وفروع إفكو",
-                        locations: ["السويس"]
-                    }
-                },
-                beyti: {
-                    en: {
-                        title: "Beyti Factories & Branches",
-                        locations: ["Nubaria","Katameya","El Salam"]
-                    },
-                    ar: {
-                        title: "مصانع وفروع بيتي",
-                        locations: ["النوبارية","القطامية","السلام"]
-                    }
-                }
-            };
-
-            // --- INTERNATIONALIZATION (i18n) ---
-            const langEnBtn = document.getElementById('lang-en');
-            const langArBtn = document.getElementById('lang-ar');
-            
-            const setLanguage = (lang) => {
-                document.querySelectorAll('[data-key]').forEach(element => {
-                    const key = element.getAttribute('data-key');
-                    if (translations[lang] && translations[lang][key]) {
-                        element.textContent = translations[lang][key];
-                    }
-                });
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // --- 1. CENTRALIZED DATA & TRANSLATIONS ---
+    const appData = {
+        translations: {
+            en: {
+                logoText: "Ergo", navAbout: "About", navServices: "Services", navAvailableJobs: "Available Positions", navJobs: "Our Job Categories", navLeaders: "Our Leaders", navClients: "Clients", navLocation: "Location", navContact: "Contact",
+                heroTitle: "Ergo's Vision", heroSubtitle: "To be a pioneer and role model in providing trained, educated and competent workers to prestigious industrial companies.", heroBtn: "Learn More", heroBtnApp: "Job Application",
+                aboutTitle: "About Us", aboutText: "A Strategic Partner for a Specialized Workforce to Achieve Industrial Excellence. Ergo is a leading supplier of trained and skilled contract labor to Egypt's leading industrial sector, with a proven track record built on partnership, reliability, and exceptional performance.",
+                servicesTitle: "Our Services",
+                service1Title: "Social Insurance", service1Text: "Expert handling of all social insurance requirements and compliance.",
+                service2Title: "Medical Insurance", service2Text: "Comprehensive management of employee medical insurance plans and benefits.",
+                service3Title: "Payroll", service3Text: "Accurate, compliant, and timely payroll processing for your entire workforce.",
+                service4Title: "Work Permits", service4Text: "Streamlined processing of work permits and visas for expatriate employees.",
+                service5Title: "Personnel Issues", service5Text: "Professional handling of all day-to-day personnel and HR-related matters.",
+                service6Title: "Our Management System", service6Text: "A powerful, centralized platform to manage all your workforce data with ease.",
+                detailsBtn: "Details",
+                availableJobsTitle: "Available Positions",
+                jobTitleLabor: "Labor", jobDescLabor: "General support in production and operational tasks, ensuring a clean and safe work environment.",
+                jobTitleDriver: "Driver", jobDescDriver: "Safely transport goods, materials, or personnel to and from specified locations in a timely manner.",
+                jobTitleHelper: "Helper", jobDescHelper: "Assist skilled workers and drivers with various tasks, including loading, unloading, and site preparation.",
+                jobTitleTechnician: "Technician", jobDescTechnician: "Perform maintenance, repair, and installation of machinery and equipment to ensure optimal performance.",
+                jobTitleDataEntry: "Data Entry", jobDescDataEntry: "Accurately input and update data into various computer systems and maintain organized records.",
+                jobTitleSupervisor: "Supervisor", jobDescSupervisor: "Oversee a team's daily operations, manage workflow, and ensure performance targets are met efficiently.",
+                jobTitleMerchandiser: "Merchandiser", jobDescMerchandiser: "Ensure products are displayed attractively in retail stores to maximize visibility and sales.",
+                jobTitleStoreKeeper: "Store Keeper", jobDescStoreKeeper: "Manage inventory, receive and dispatch goods, and maintain accurate records of all stock movements.",
+                jobTitleCoordinator: "Coordinator", jobDescCoordinator: "Organize activities, manage communication between departments, and ensure projects run smoothly.",
+                jobTitleOperator: "Operator", jobDescOperator: "Operate machinery or equipment in a safe and efficient manner to meet production goals.",
+                stat1Desc: "Years of Experience", stat2Desc: "Skilled Workers Managed", stat3Desc: "Housing Buildings", stat4Desc: "Trucks",
+                jobsTitle: "Our Job Categories", blueSarkTitle: "Blue Collar", blueSarkDesc: "Explore our available blue-collar job opportunities.", whiteSarkTitle: "White Collar", whiteSarkDesc: "Discover our open white-collar and technical positions.", detailsBtnJobs: "See Details",
+                leadersTitle: "Meet Our Leaders",
+                leader1Name: "Salem Mohamed", leader1Role: "Chief Executive Officer", leader1Bio: "With over a decade of experience in the industrial sector, Salem provides the strategic vision that drives Ergo's growth and commitment to excellence.",
+                leader2Name: "Tarek Ghaffar", leader2Role: "Founder & Chairman", leader2Bio: "Tarek founded Ergo with a vision to revolutionize workforce solutions in Egypt. His leadership continues to inspire our mission and values.",
+                leader3Name: "Yahia Abdelrahman", leader3Role: "Human Resources Manager", leader3Bio: "Yahia is dedicated to cultivating a skilled and motivated workforce, ensuring our employees and clients achieve their full potential.",
+                clientsTitle: "Our Major Clients", factoriesBtn: "Factories & branches", clientsTotal: "In total, we proudly serve our partners across 22 factories and branches throughout Egypt.",
                 
-                langEnBtn.classList.toggle('active', lang === 'en');
-                langArBtn.classList.toggle('active', lang === 'ar');
+                // --- LOCATION TEXT (ENGLISH) ---
+                // === CUSTOMIZE HERE (2/4) ===
+                locationTitle: "Our Location",
+                locationSubtitle: "Visit Our Office",
+                locationAddress: "City Star Mall, Tower 4, Service Axis, First Section 6th of October, Second Section 6th of October, Giza Governorate",
+               
 
-                localStorage.setItem('language', lang);
-            };
+                contactTitle: "Contact Us", formCompany: "Company", formName: "Name", formPhone: "Phone Number", formPosition: "Position", formEmail: "Email", formMessage: "Message", formBtn: "Send Message",
+                jobAppModalTitle: "Job Application", formAge: "Age", formMaritalStatus: "Marital Status", formJob: "Job", formAddress: "Address", formBtnApply: "Apply Now",
+                jobOptLabor: "Labor", jobOptDriver: "Driver", jobOptHelper: "Helper", jobOptTechnician: "Technician", jobOptDataEntry: "Data Entry", jobOptSupervisor: "Supervisor", jobOptMerchandiser: "Merchandiser", jobOptStoreKeeper: "Store Keeper", jobOptCoordinator: "Coordinator", jobOptOperator: "Operator",
+                service1ModalTitle: "Social Insurance", service1ModalContent: "Ensure complete compliance and peace of mind with our expert social insurance management. We handle the entire lifecycle, from seamless employee registration to accurate monthly contribution processing and meticulous record-keeping.",
+                service2ModalTitle: "Medical Insurance", service2ModalContent: "Attract and retain top talent by offering exceptional medical benefits without the administrative burden. We manage customized insurance plans that fit your budget and your team's needs.",
+                service3ModalTitle: "Payroll", service3ModalContent: "Transform your payroll from a complex task into a strategic advantage. Our service guarantees flawless accuracy and strict compliance with all local labor laws and tax regulations.",
+                service4ModalTitle: "Work Permits", service4ModalContent: "Expand your team with global talent, effortlessly. Our specialized service demystifies the complex process of securing work permits and visas for your expatriate employees.",
+                service5ModalTitle: "Personnel Issues", service5ModalContent: "Navigate the complexities of human resources with confidence. Our team provides expert guidance and hands-on support for all personnel matters, including contract management and compliance.",
+                service6ModalTitle: "Our Management System", service6ModalContent: "Unlock unparalleled efficiency with the Ergo Workforce Platform. This powerful tool centralizes all your critical HR functions into one intuitive dashboard for data-driven decisions."
+            },
+            ar: {
+                logoText: "إرجو", navAbout: "نبذة عنا", navServices: "خدماتنا", navAvailableJobs: "الوظائف المتاحة", navJobs: "فئات وظائفنا", navLeaders: "قيادتنا", navClients: "عملاؤنا", navLocation: "موقعنا", navContact: "اتصل بنا",
+                heroTitle: "رؤية إرجو", heroSubtitle: "أن نكون روادًا ونموذجًا يُحتذى به في توفير العمالة المدربة والكفؤة للشركات الصناعية المرموقة.", heroBtn: "اعرف المزيد", heroBtnApp: "طلب توظيف",
+                aboutTitle: "نبذة عنا", aboutText: "شريك استراتيجي للقوى العاملة المتخصصة لتحقيق التميز الصناعي. إرجو هي المورد الرائد للعمالة المتعاقدة المدربة والماهرة للقطاع الصناعي في مصر، بسجل حافل مبني على الشراكة والموثوقية.",
+                servicesTitle: "خدماتنا",
+                service1Title: "التأمينات الاجتماعية", service1Text: "معالجة احترافية لجميع متطلبات التأمينات الاجتماعية والامتثال للقوانين.",
+                service2Title: "التأمين الطبي", service2Text: "إدارة شاملة لخطط ومزايا التأمين الطبي للموظفين.",
+                service3Title: "الرواتب", service3Text: "معالجة دقيقة ومتوافقة وفي الوقت المناسب لرواتب القوى العاملة لديك.",
+                service4Title: "تصاريح العمل", service4Text: "إجراءات مبسطة لاستخراج تصاريح العمل والتأشيرات للموظفين الأجانب.",
+                service5Title: "شؤون الموظفين", service5Text: "معالجة احترافية لجميع الأمور اليومية المتعلقة بالموظفين والموارد البشرية.",
+                service6Title: "نظامنا الإداري", service6Text: "منصة مركزية قوية لإدارة جميع بيانات القوى العاملة لديك بكل سهولة.",
+                detailsBtn: "تفاصيل",
+                availableJobsTitle: "الوظائف المتاحة",
+                jobTitleLabor: "عامل", jobDescLabor: "تقديم الدعم العام في مهام الإنتاج والتشغيل، وضمان بيئة عمل نظيفة وآمنة.",
+                jobTitleDriver: "سائق", jobDescDriver: "نقل البضائع أو المواد أو الموظفين بأمان من وإلى المواقع المحددة في الوقت المناسب.",
+                jobTitleHelper: "مساعد", jobDescHelper: "مساعدة العمال المهرة والسائقين في مهام متنوعة، بما في ذلك التحميل والتفريغ وتجهيز الموقع.",
+                jobTitleTechnician: "فني", jobDescTechnician: "إجراء صيانة وإصلاح وتركيب الآلات والمعدات لضمان الأداء الأمثل.",
+                jobTitleDataEntry: "مدخل بيانات", jobDescDataEntry: "إدخال وتحديث البيانات بدقة في أنظمة الكمبيوتر المختلفة والاحتفاظ بسجلات منظمة.",
+                jobTitleSupervisor: "مشرف", jobDescSupervisor: "الإشراف على العمليات اليومية للفريق، وإدارة سير العمل، وضمان تحقيق أهداف الأداء بكفاءة.",
+                jobTitleMerchandiser: "منسق مبيعات", jobDescMerchandiser: "التأكد من عرض المنتجات بشكل جذاب في متاجر التجزئة لزيادة المبيعات.",
+                jobTitleStoreKeeper: "أمين مخزن", jobDescStoreKeeper: "إدارة المخزون واستلام وإرسال البضائع والاحتفاظ بسجلات دقيقة لجميع حركات المخزون.",
+                jobTitleCoordinator: "منسق", jobDescCoordinator: "تنظيم الأنشطة، وإدارة التواصل بين الأقسام، وضمان سير المشاريع بسلاسة.",
+                jobTitleOperator: "مشغل", jobDescOperator: "تشغيل الآلات أو المعدات بطريقة آمنة وفعالة لتحقيق أهداف الإنتاج.",
+                stat1Desc: "سنوات من الخبرة", stat2Desc: "عامل ماهر مُدار", stat3Desc: "مباني سكنية", stat4Desc: "شاحنة",
+                jobsTitle: "فئات وظائفنا", blueSarkTitle: "العمالة (بلو سارك)", blueSarkDesc: "اكتشف فرص العمل المتاحة لدينا للعمالة.", whiteSarkTitle: "الإدارة والفنيين (وايت سارك)", whiteSarkDesc: "اكتشف وظائفنا الإدارية والفنية الشاغرة.", detailsBtnJobs: "عرض التفاصيل",
+                leadersTitle: "تعرف على قادتنا",
+                leader1Name: "سالم محمد", leader1Role: "الرئيس التنفيذي", leader1Bio: "بخبرة تمتد لأكثر من عقد في القطاع الصناعي، يقدم سالم الرؤية الاستراتيجية التي تدفع نمو إرجو والتزامها بالتميز.",
+                leader2Name: "طارق غفار", leader2Role: "المؤسس ورئيس مجلس الإدارة", leader2Bio: "أسس طارق شركة إرجو برؤية لإحداث ثورة في حلول القوى العاملة في مصر. وتستمر قيادته في إلهام رسالتنا وقيمنا.",
+                leader3Name: "يحيى عبد الرحمن", leader3Role: "مدير الموارد البشرية", leader3Bio: "يكرس يحيى جهوده لتنمية قوة عاملة ماهرة ومتحفزة، مما يضمن تحقيق موظفينا وعملائنا لأقصى إمكاناتهم.",
+                clientsTitle: "كبار عملائنا", factoriesBtn: "المصانع والفروع", clientsTotal: "في الإجمالي، نفخر بخدمة شركائنا عبر ٢٢ مصنعًا وفرعًا في جميع أنحاء مصر.",
+                
+                // --- LOCATION TEXT (ARABIC) ---
+                // === CUSTOMIZE HERE (3/4) ===
+                locationTitle: "موقعنا",
+                locationSubtitle: "تفضل بزيارة مكتبنا",
+                locationAddress: "مول سيتي ستار، برج 4، المحور الخدمي، قسم أول 6 أكتوبر، قسم ثان 6 أكتوبر، محافظة الجيزة ",
+               
 
-            langEnBtn.addEventListener('click', () => setLanguage('en'));
-            langArBtn.addEventListener('click', () => setLanguage('ar'));
+                contactTitle: "اتصل بنا", formCompany: "الشركة", formName: "الاسم", formPhone: "رقم الهاتف", formPosition: "المنصب الوظيفي", formEmail: "البريد الإلكتروني", formMessage: "الرسالة", formBtn: "إرسال الرسالة",
+                jobAppModalTitle: "طلب توظيف", formAge: "العمر", formMaritalStatus: "الحالة الاجتماعية", formJob: "الوظيفة المطلوبة", formAddress: "العنوان", formBtnApply: "قدم الآن",
+                jobOptLabor: "عامل", jobOptDriver: "سائق", jobOptHelper: "مساعد", jobOptTechnician: "فني", jobOptDataEntry: "مدخل بيانات", jobOptSupervisor: "مشرف", jobOptMerchandiser: "منسق مبيعات", jobOptStoreKeeper: "أمين مخزن", jobOptCoordinator: "منسق", jobOptOperator: "مشغل",
+                service1ModalTitle: "التأمينات الاجتماعية", service1ModalContent: "نضمن لك الامتثال الكامل وراحة البال من خلال إدارتنا المتخصصة للتأمينات الاجتماعية. نحن نتولى الدورة الكاملة، بدءًا من تسجيل الموظفين بسلاسة وصولًا إلى معالجة الاشتراكات الشهرية.",
+                service2ModalTitle: "التأمين الطبي", service2ModalContent: "اجذب أفضل المواهب وحافظ عليها من خلال تقديم مزايا طبية استثنائية دون عبء إداري. نحن ندير خطط تأمين مخصصة تناسب ميزانيتك واحتياجات فريقك.",
+                service3ModalTitle: "الرواتب", service3ModalContent: "حوّل كشوف المرتبات الخاصة بك من مهمة معقدة إلى ميزة استراتيجية. تضمن خدمتنا دقة لا تشوبها شائبة وامتثالًا صارمًا لجميع قوانين العمل واللوائح الضريبية المحلية.",
+                service4ModalTitle: "تصاريح العمل", service4ModalContent: "وسّع فريقك بمواهب عالمية، دون عناء. تعمل خدمتنا المتخصصة على إزالة الغموض عن العملية المعقدة لتأمين تصاريح العمل والتأشيرات لموظفيك الأجانب.",
+                service5ModalTitle: "شؤون الموظفين", service5ModalContent: "تعامل مع تعقيدات الموارد البشرية بثقة. يقدم فريقنا إرشادات الخبراء والدعم العملي لجميع شؤون الموظفين، بما في ذلك إدارة العقود والامتثال للقوانين.",
+                service6ModalTitle: "نظامنا الإداري", service6ModalContent: "أطلق العنان لكفاءة لا مثيل لها مع منصة إرجو للقوى العاملة. هذه الأداة القوية تضع جميع وظائف الموارد البشرية الحيوية في لوحة تحكم واحدة لاتخاذ قرارات تعتمد على البيانات."
+            }
+        },
+        services: [
+            { key: 'service1', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>' },
+            { key: 'service2', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>' },
+            { key: 'service3', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>' },
+            { key: 'service4', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>' },
+            { key: 'service5', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>' },
+            { key: 'service6', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>' },
+        ],
+        positions: [
+            { key: 'jobTitleLabor', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>' },
+            { key: 'jobTitleDriver', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>' },
+            { key: 'jobTitleHelper', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>' },
+            { key: 'jobTitleTechnician', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>' },
+            { key: 'jobTitleDataEntry', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>' },
+            { key: 'jobTitleSupervisor', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>' },
+            { key: 'jobTitleMerchandiser', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="9" x2="6" y2="21"></line><line x1="10" y1="9" x2="10" y2="21"></line><line x1="14" y1="9" x2="14" y2="21"></line><line x1="18" y1="9" x2="18" y2="21"></line><path d="M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"></path></svg>' },
+            { key: 'jobTitleStoreKeeper', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>' },
+            { key: 'jobTitleCoordinator', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>' },
+            { key: 'jobTitleOperator', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>' },
+        ],
+        stats: [
+            { target: 14, text: "14+", key: "stat1Desc", icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>' },
+            { target: 3000, text: "+3000", key: "stat2Desc", icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>' },
+            { target: 3, text: "3", key: "stat3Desc", icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>' },
+            { target: 15, text: "15", key: "stat4Desc", icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>' },
+        ],
+        leaders: [ { key: 'leader1' }, { key: 'leader2' }, { key: 'leader3' } ],
+        clients: [
+            { key: 'pepsi', logo: 'logos/pepsi-logo.png', locations: { en: ["Zagazig", "Tanta", "Nasr City", "Ain Shams", "Maadi", "Mostorod", "October", "Amreya", "Embaba"], ar: ["الزقازيق", "طنطا", "مدينة نصر", "عين شمس", "المعادي", "مسطرد", "أكتوبر", "العامرية", "إمبابة"] } },
+            { key: 'chipsy', logo: 'logos/chipsy-logo.png', locations: { en: ["Ain Shams", "October", "Katameya", "Tanash", "Obour"], ar: ["عين شمس", "أكتوبر", "القطامية", "طناش", "العبور"] } },
+            { key: 'cocacola', logo: 'logos/coca-cola-logo.jpg', locations: { en: ["October"], ar: ["أكتوبر"] } },
+            { key: 'heinz', logo: 'logos/heinz-logo.jpg', locations: { en: ["October"], ar: ["أكتوبر"] } },
+            { key: 'kelloggs', logo: 'logos/kelloggs-logo.jpg', locations: { en: ["October", "Sahel"], ar: ["أكتوبر", "الساحل"] } },
+            { key: 'iffco', logo: 'logos/iffco-logo.jpg', locations: { en: ["Suez"], ar: ["السويس"] } },
+            { key: 'beyti', logo: 'logos/Beyti-logo.avif', locations: { en: ["Nubaria","Katameya","El Salam"], ar: ["النوبارية","القطامية","السلام"] } },
+        ],
+        jobListings: {
+            blue: {
+                en: { title: "Blue Collar Jobs", jobs: ["Production Labor", "Forklift Driver", "Wholesale Helper", "Non Production Labor", "Labor", "Helper", "Retail Helper"] },
+                ar: { title: "وظائف العمالة (بلو سارك)", jobs: ["عامل إنتاج", "سائق رافعة شوكية", "مساعد بيع بالجملة", "عامل خدمات (غير إنتاجي)", "عامل", "مساعد", "مساعد بيع بالتجزئة"] }
+            },
+            white: {
+                en: { title: "White Collar Jobs", jobs: ["Supervisor", "Merchandiser", "Assistant Store Keeper", "Store Keeper", "Operator", "Loading Labor", "Service Labor", "Yard Coordinator", "LD&T Coordinator", "Facilities Coordinator", "Tractor Driver", "Agro Operator", "Warehouse Officer", "SC QC Technician", "Lab Technician", "Lab Analyst", "Facilities Driver", "Deployment Driver", "Assistant Technician", "Argo Lab Technician", "Loading Driver", "Ambulance Driver", "Data Entry Clerk"] },
+                ar: { title: "وظائف الإدارة والفنيين (وايت سارك)", jobs: ["مشرف", "منسق مبيعات", "مساعد أمين مخزن", "أمين مخزن", "مشغل", "عامل تحميل", "عامل خدمات", "منسق ساحة", "منسق تحميل ونقل", "منسق مرافق", "سائق جرار", "مشغل زراعي", "مسؤول مستودع", "فني جودة سلسلة التوريد", "فني مختبر", "محلل مختبر", "سائق مرافق", "سائق توزيع", "مساعد فني", "فني معمل زراعي", "سائق تحميل", "سائق إسعاف", "مدخل بيانات"] }
+            }
+        },
+    };
 
-            const savedLang = localStorage.getItem('language') || 'en';
-            setLanguage(savedLang);
+    let currentLang = 'en';
+    let statsAnimated = false;
 
-            // --- THEME SWITCHER ---
-            const themeToggle = document.getElementById('theme-toggle');
-            const currentTheme = localStorage.getItem('theme');
-            if (currentTheme) { document.body.classList.add(currentTheme); }
-            themeToggle.addEventListener('click', () => {
-                document.body.classList.toggle('dark-mode');
-                let theme = document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light';
-                localStorage.setItem('theme', theme);
-            });
+    // --- 2. DYNAMIC CONTENT RENDERING ---
+    const renderDynamicContent = (containerId, data, templateFn) => {
+        const container = document.getElementById(containerId);
+        if (container) container.innerHTML = data.map(item => templateFn(item)).join('');
+    };
+    const t = () => appData.translations[currentLang];
+    const createServiceCard = (s) => `<div class="service-card"><div class="icon">${s.icon}</div><h3 data-key="${s.key}Title">${t()[s.key+'Title']}</h3><p data-key="${s.key}Text">${t()[s.key+'Text']}</p><button class="btn read-more-btn" data-modal-key="${s.key}" data-key="detailsBtn">${t().detailsBtn}</button></div>`;
+    const createPositionCard = (p) => `<div class="job-display-card"><div class="icon">${p.icon}</div><h3 data-key="${p.key}">${t()[p.key]}</h3><p data-key="${p.key.replace('Title','Desc')}">${t()[p.key.replace('Title','Desc')]}</p></div>`;
+    const createStatItem = (stat) => `<div class="stat-item">${stat.icon}<h2 class="stat-number" data-target="${stat.target}" data-text="${stat.text}">${statsAnimated ? stat.text : '0'}</h2><p data-key="${stat.key}">${t()[stat.key]}</p></div>`;
+    const createLeaderCard = (l) => `<div class="leader-card"><div class="leader-img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div><h3 data-key="${l.key}Name">${t()[l.key+'Name']}</h3><p class="leader-title" data-key="${l.key}Role">${t()[l.key+'Role']}</p><p class="leader-bio" data-key="${l.key}Bio">${t()[l.key+'Bio']}</p></div>`;
+    const createClientItem = (c) => `<div class="client-item"><div class="client-logo"><img src="${c.logo}" alt="${c.key} Logo"></div><button class="btn btn-small client-details-btn" data-client="${c.key}" data-key="factoriesBtn">${t().factoriesBtn}</button></div>`;
 
-            // --- MOBILE MENU ---
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navMenu = document.getElementById('nav-menu');
-            mobileMenu.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                mobileMenu.classList.toggle('active');
-            });
-
-            // --- MODAL HANDLING (GENERAL) ---
-            const allModals = document.querySelectorAll('.modal');
-            const allCloseBtns = document.querySelectorAll('.close-btn');
-
-            const closeModal = () => {
-                allModals.forEach(modal => modal.style.display = 'none');
-            };
-
-            allCloseBtns.forEach(btn => btn.addEventListener('click', closeModal));
-            window.addEventListener('click', (e) => {
-                allModals.forEach(modal => {
-                    if (e.target == modal) {
-                        closeModal();
-                    }
-                });
-            });
-
-            // --- SERVICE DETAILS MODAL ---
-            const serviceModal = document.getElementById('serviceModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalContent = document.getElementById('modalContent');
-            
-            document.querySelectorAll('.read-more-btn').forEach(item => {
-                item.addEventListener('click', (e) => {
-                    const key = e.currentTarget.getAttribute('data-modal-key');
-                    if (!key) return;
-                    const currentLang = document.documentElement.lang || 'en';
-                    modalTitle.textContent = translations[currentLang][`${key}ModalTitle`] || '';
-                    modalContent.textContent = translations[currentLang][`${key}ModalContent`] || '';
-                    serviceModal.style.display = 'block';
-                });
-            });
-
-            // --- JOB DETAILS MODAL ---
-            const jobsModal = document.getElementById('jobsModal');
-            const jobsModalTitle = document.getElementById('jobsModalTitle');
-            const jobsModalList = document.getElementById('jobsModalList');
-
-            document.querySelectorAll('.job-details-btn').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    const category = e.currentTarget.getAttribute('data-job-category');
-                    if (!jobListings[category]) return;
-
-                    const currentLang = document.documentElement.lang || 'en';
-                    const langSpecificData = jobListings[category][currentLang];
-
-                    jobsModalTitle.textContent = langSpecificData.title;
-                    jobsModalList.innerHTML = ''; // Clear previous list
-
-                    langSpecificData.jobs.forEach(job => {
-                        const li = document.createElement('li');
-                        li.textContent = job;
-                        jobsModalList.appendChild(li);
-                    });
-
-                    jobsModal.style.display = 'block';
-                });
-            });
-
-            // --- CLIENT DETAILS MODAL ---
-            const clientModal = document.getElementById('clientModal');
-            const clientModalTitle = document.getElementById('clientModalTitle');
-            const clientModalList = document.getElementById('clientModalList');
-
-            document.querySelectorAll('.client-details-btn').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    const client = e.currentTarget.getAttribute('data-client');
-                    if (!clientLocations[client]) return;
-
-                    const currentLang = document.documentElement.lang || 'en';
-                    const langSpecificData = clientLocations[client][currentLang];
-
-                    clientModalTitle.textContent = langSpecificData.title;
-                    clientModalList.innerHTML = '';
-
-                    langSpecificData.locations.forEach(location => {
-                        const li = document.createElement('li');
-                        li.textContent = location;
-                        clientModalList.appendChild(li);
-                    });
-                    
-                    clientModal.style.display = 'block';
-                });
-            });
-
-            // --- AJAX CONTACT FORM FOR FORMSPREE ---
-            const contactForm = document.getElementById('contactForm');
-            contactForm.addEventListener('submit', function(e) { /* ... formspree logic ... */ });
-            
-            // --- SCROLL TO TOP BUTTON & FADE-IN SECTIONS ---
-            const scrollTopBtn = document.getElementById('scrollTopBtn');
-            const sections = document.querySelectorAll('.section');
-            
-            const sectionObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        
-                        const staggerContainer = entry.target.querySelector('.stagger-container');
-                        if (staggerContainer) {
-                            const items = staggerContainer.children;
-                            for (let i = 0; i < items.length; i++) {
-                                items[i].style.transitionDelay = (i * 100) + 'ms';
-                            }
-                        }
-
-                        if (entry.target.id === 'stats') {
-                            const counters = entry.target.querySelectorAll('.stat-number');
-                            counters.forEach(counter => {
-                                const animate = () => {
-                                    const target = +counter.getAttribute('data-target');
-                                    const count = +counter.innerText.replace(/\D/g,''); // Clean text before parsing
-                                    const increment = Math.max(1, target / 200);
-
-                                    if (count < target) {
-                                        counter.innerText = Math.ceil(count + increment);
-                                        setTimeout(animate, 10);
-                                    } else {
-                                        counter.innerText = counter.getAttribute('data-text');
-                                    }
-                                };
-                                // Only animate if it hasn't been animated before
-                                if (!counter.dataset.animated) {
-                                    counter.dataset.animated = "true";
-                                    counter.innerText = '0';
-                                    animate();
-                                }
-                            });
-                        }
-                        
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            sections.forEach(section => { sectionObserver.observe(section); });
-            
-            window.onscroll = () => {
-                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                    scrollTopBtn.classList.add('visible');
-                } else {
-                    scrollTopBtn.classList.remove('visible');
-                }
-            };
-            scrollTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-
+    // --- 3. UI & EVENT HANDLING ---
+    const setLanguage = (lang) => {
+        currentLang = lang;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        localStorage.setItem('language', lang);
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (t()[key]) el.textContent = t()[key];
         });
-    </script>
+        renderAllDynamicContent();
+        document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+        document.getElementById('lang-ar').classList.toggle('active', lang === 'ar');
+    };
+
+    const initEventListeners = () => {
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light');
+        });
+        document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+        document.getElementById('lang-ar').addEventListener('click', () => setLanguage('ar'));
+        
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        const navbar = document.querySelector('.navbar');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('#nav-menu a.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
+
+        document.body.addEventListener('click', handleBodyClick);
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => scrollTopBtn.classList.toggle('visible', window.scrollY > 100));
+        scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    };
+
+    const handleBodyClick = (e) => {
+        const target = e.target;
+        if (target.closest('.read-more-btn')) showServiceModal(target.closest('.read-more-btn').dataset.modalKey);
+        else if (target.closest('.client-details-btn')) showClientModal(target.closest('.client-details-btn').dataset.client);
+        else if (target.closest('.job-details-btn')) showJobsModal(target.closest('.job-details-btn').dataset.jobCategory);
+        else if (target.closest('#jobAppBtn')) document.getElementById('jobAppModal').style.display = 'block';
+        else if (target.matches('.modal, .close-btn')) document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+    };
+    
+    const showServiceModal = (key) => {
+        document.getElementById('modalTitle').textContent = t()[key + 'ModalTitle'] || '';
+        document.getElementById('modalContent').textContent = t()[key + 'ModalContent'] || '';
+        document.getElementById('serviceModal').style.display = 'block';
+    };
+
+    const showClientModal = (key) => {
+        const client = appData.clients.find(c => c.key === key);
+        if (!client) return;
+        document.getElementById('clientModalTitle').textContent = `${client.key.charAt(0).toUpperCase() + client.key.slice(1)} ${t().factoriesBtn}`;
+        document.getElementById('clientModalList').innerHTML = client.locations[currentLang].map(loc => `<li>${loc}</li>`).join('');
+        document.getElementById('clientModal').style.display = 'block';
+    };
+    
+    const showJobsModal = (category) => {
+        const jobData = appData.jobListings[category][currentLang];
+        if (!jobData) return;
+        document.getElementById('jobsModalTitle').textContent = jobData.title;
+        document.getElementById('jobsModalList').innerHTML = jobData.jobs.map(job => `<li>${job}</li>`).join('');
+        document.getElementById('jobsModal').style.display = 'block';
+    };
+
+    const initIntersectionObserver = () => {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    entry.target.querySelectorAll('.stagger-container > *').forEach((item, index) => item.style.transitionDelay = `${index * 100}ms`);
+                    if (entry.target.id === 'stats') animateStats();
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.section').forEach(section => observer.observe(section));
+    };
+    
+    const initScrollSpy = () => {
+        const sections = document.querySelectorAll('.section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active-link');
+                        if (link.getAttribute('href') === `#${entry.target.id}`) {
+                            link.classList.add('active-link');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-30% 0px -70% 0px' }); 
+
+        sections.forEach(section => observer.observe(section));
+    };
+    
+    const animateStats = () => {
+        if (statsAnimated) return;
+        statsAnimated = true;
+        document.querySelectorAll('.stat-number').forEach(counter => {
+            const target = +counter.dataset.target;
+            let count = 0;
+            const update = () => {
+                const increment = Math.max(1, target / 200);
+                count = Math.min(target, Math.ceil(count + increment));
+                counter.innerText = count;
+                if (count < target) requestAnimationFrame(update);
+                else counter.innerText = counter.dataset.text;
+            };
+            update();
+        });
+    };
+
+    // --- 4. INITIALIZATION ---
+    const renderAllDynamicContent = () => {
+        renderDynamicContent('services-grid', appData.services, createServiceCard);
+        renderDynamicContent('jobs-display-grid', appData.positions, createPositionCard);
+        renderDynamicContent('stats-grid-content', appData.stats, createStatItem);
+        renderDynamicContent('leaders-grid', appData.leaders, createLeaderCard);
+        renderDynamicContent('clients-grid', appData.clients, createClientItem);
+    };
+
+    const init = () => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) document.body.classList.add(savedTheme);
+
+        const savedLang = localStorage.getItem('language');
+        const browserLang = navigator.language.split('-')[0];
+        const defaultLang = savedLang || (browserLang === 'ar' ? 'ar' : 'en');
+        setLanguage(defaultLang);
+
+        initEventListeners();
+        initIntersectionObserver();
+        initScrollSpy();
+    };
+
+    init();
+});
+</script>
+
+<script>
+// --- GOOGLE SHEETS FORM HANDLING ---
+document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.getElementById('contactForm');
+    const contactFormStatus = document.getElementById('contactFormStatus');
+    // === CUSTOMIZE HERE (4/4) ===
+    // Paste your *CONTACT FORM* Google Script URL here
+    const contactScriptURL = 'https://script.google.com/macros/s/AKfycbwN4FAhLZLD-OVcf-8ddC9fm0bAr65mYC2qT6uxT9ORmXm6okCtHdG3CXkMKVEqPHI-lQ/exec';
+
+    contactForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+
+        fetch(contactScriptURL, { method: 'POST', body: new FormData(contactForm) })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    contactFormStatus.innerHTML = '<p style="color: green; text-align: center;">Message sent successfully!</p>';
+                    contactForm.reset();
+                } else {
+                    throw new Error(data.error || 'Unknown error occurred.');
+                }
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                contactFormStatus.innerHTML = `<p style="color: red; text-align: center;">Error: ${error.message}</p>`;
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                setTimeout(() => {
+                    const currentLang = document.documentElement.lang || 'en';
+                    submitButton.textContent = currentLang === 'ar' ? 'إرسال الرسالة' : 'Send Message';
+                    contactFormStatus.innerHTML = '';
+                }, 4000);
+            });
+    });
+
+    const jobAppForm = document.getElementById('jobAppForm');
+    const jobAppFormStatus = document.getElementById('jobAppFormStatus');
+    
+    // === CUSTOMIZE HERE (also 4/4) ===
+    // You MUST create a *SEPARATE* Google Script and paste the *NEW* URL here for the job form.
+    const jobAppScriptURL = 'https://script.google.com/macros/s/AKfycbwN4FAhLZLD-OVcf-8ddC9fm0bAr65mYC2qT6uxT9ORmXm6okCtHdG3CXkMKVEqPHI-lQ/exec'; // <-- PASTE YOUR *JOB APP* SCRIPT URL HERE
+
+    jobAppForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const submitButton = jobAppForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+
+        fetch(jobAppScriptURL, { method: 'POST', body: new FormData(jobAppForm) })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    jobAppFormStatus.innerHTML = '<p style="color: green; text-align: center;">Application submitted successfully!</p>';
+                    jobAppForm.reset();
+                } else {
+                    throw new Error(data.error || 'Unknown error occurred.');
+                }
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                jobAppFormStatus.innerHTML = `<p style="color: red; text-align: center;">Error: ${error.message}</p>`;
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                setTimeout(() => {
+                    const currentLang = document.documentElement.lang || 'en';
+                    submitButton.textContent = currentLang === 'ar' ? 'قدم الآن' : 'Apply Now';
+                    jobAppFormStatus.innerHTML = ''; 
+                }, 4000);
+            });
+    });
+});
+</script>
+
 </body>
 </html>
