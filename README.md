@@ -7,7 +7,8 @@ A landing page for my company.
 
 ## 🎨 Design & Code
 * **Design:** Created high-fidelity mockups in **Figma** before coding.
-* **Frontend:** Built using HTML5, tailwind CSS.
+* **Frontend:** Built using HTML5, tailwind CSS3, JavaScript (Vanilla JS).
+  
 
 
 ## 🚀 Features
